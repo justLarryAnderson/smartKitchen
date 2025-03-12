@@ -21,6 +21,11 @@ class KitchenApp(MDApp):
         # Set themese and palet
         self.theme_cls.theme_style = 'Dark'
         self.theme_cls.primary_palet = 'Green'
+        #Loading all screens, need optimiztion later
+        Builder.load_file('screens/cart.kv')
+        Builder.load_file('screens/dishes.kv')
+        Builder.load_file('screens/fridge.kv')
+        Builder.load_file('screens/profile.kv')
         # Create screen_manager
         self.screen_manager = MDScreenManager()
         self.screen_manager.add_widget(FridgeScreen(name = 'fridge'))
