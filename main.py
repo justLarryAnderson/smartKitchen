@@ -21,8 +21,8 @@ class KitchenApp(MDApp):
     def build(self):
         Window.size = (360, 640)
         # Set themese and palet
-        self.theme_cls.theme_style = 'Dark'
-        self.theme_cls.primary_palet = 'Green'
+        self.theme_cls.theme_style = 'Light'
+        self.theme_cls.primary_palet = 'Teal'
         #Loading all screens, need optimiztion later
         Builder.load_file('screens/cart.kv')
         Builder.load_file('screens/dishes.kv')
