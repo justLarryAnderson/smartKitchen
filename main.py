@@ -1,5 +1,6 @@
 from kivy.lang import Builder
 from kivymd.app import MDApp
+from kivy.core.window import Window
 
 from kivymd.uix.screen import MDScreen
 from kivymd.uix.screenmanager import MDScreenManager
@@ -18,6 +19,7 @@ class ProfileScreen(MDScreen):
 
 class KitchenApp(MDApp):
     def build(self):
+        Window.size = (360, 640)
         # Set themese and palet
         self.theme_cls.theme_style = 'Dark'
         self.theme_cls.primary_palet = 'Green'
@@ -28,8 +30,10 @@ class KitchenApp(MDApp):
         Builder.load_file('screens/profile.kv')
         # Create screen_manager
         self.screen_manager = MDScreenManager()
-        self.screen_manager.add_widget(FridgeScreen(name = 'fridge'))
-        self.screen_manager.add_widget(ProfileScreen(name = 'profile'))
+        self.screen_manager.add_widget(FridgeScreen())
+        self.screen_manager.add_widget(CartScreen())
+        self.screen_manager.add_widget(DishesScreen())
+        self.screen_manager.add_widget(ProfileScreen())
         
         return self.screen_manager
 
